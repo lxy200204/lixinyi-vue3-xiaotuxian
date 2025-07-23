@@ -18,5 +18,6 @@ onMounted(() => CategoryStore.getCategory());
   <LayoutNav />
   <LayoutHeader />
   <RouterView />
+  <div style="height: 20px; background-color: white"></div>
   <LayoutFooter />
 </template>
