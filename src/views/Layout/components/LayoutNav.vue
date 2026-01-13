@@ -22,9 +22,9 @@ const confirm = () => {
         <!-- 适配思路：登录时显示第一块 非登录时显示第二块 是否有token -->
         <template v-if="userStore.userInfo.token">
           <li>
-            <a href="javascript:;"
-              ><i class="iconfont icon-user"></i>{{ userStore.userInfo.account }}</a
-            >
+            <router-link to="/member">
+              <i class="iconfont icon-user"></i>{{ userStore.userInfo.account }}
+            </router-link>
           </li>
           <li>
             <el-popconfirm
@@ -38,8 +38,8 @@ const confirm = () => {
               </template>
             </el-popconfirm>
           </li>
-          <li><a href="javascript:;">我的订单</a></li>
-          <li><a href="javascript:;">会员中心</a></li>
+          <li><router-link to="/member/order">我的订单</router-link></li>
+          <li><router-link to="/member">会员中心</router-link></li>
         </template>
         <template v-else>
           <li><a href="javascript:;" @click="$router.push('/login')">请先登录</a></li>
